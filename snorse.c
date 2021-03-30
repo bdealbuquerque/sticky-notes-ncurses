@@ -3,33 +3,22 @@
 #include "config.h"
 
 void work_on_win(WINDOW *win, int y, int x, char mesg[], char str[MAXBUFSIZE]){
-	int ch;
+	int ch, c;
 	int row, col;
 
 	getmaxyx(win, row, col);
 
-	do{
-	mvprintw(y,x,"%s",mesg);
-	getstr(str);
-	y++;
-	} while ((ch = wgetch(win)) != KEY_F(1) && y<row);
-}
+	for(;;){
+		
+		
 
-/*void work_on_win(WINDOW *win, int y, int x, char mesg[], char str[MAXBUFSIZE]){
-	int ch;
-	keypad(win, TRUE);
+		mvprintw(y,x,"%s",mesg);
+		getstr(str);
+		y++;
 
-	while((ch = wgetch(win)) != KEY_F(1)){
-		switch(ch){
-			case 10:
-				mvwprintw(win,y,x,"%s",mesg);
-				getstr(str);
-				break;
+		if (y == row-1)
+			break;
+		if (*str == 27)
+			break;
 		}
 	}
-}*/
-
-
-
-
-

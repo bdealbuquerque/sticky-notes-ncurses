@@ -16,7 +16,7 @@ int main()
 					 
  initscr();		
  //getmaxyx(stdscr,row,col);		
- work_on_win(stdscr, y,strlen(mesg),mesg,str);
+ work_on_win(stdscr,y,strlen(mesg),mesg,str);
 
  getch();
  endwin();
