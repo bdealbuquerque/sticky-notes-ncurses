@@ -44,6 +44,18 @@ void edit_on_win(WINDOW *win, int y, int x){ /*Mode that edits lines*/
 
         wmove(win, y, x);
         wrefresh(win);
+
+		  switch (ch)
+		  {
+			  case 'x':
+				  wdelch(win);
+				  break;
+			  case 'd':
+				  wdeleteln(win);
+				  break;
+		  }
+		  wrefresh(win);
+
     }
 }
 
