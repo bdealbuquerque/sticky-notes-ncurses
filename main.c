@@ -12,14 +12,23 @@ int main()
  int ch;
 
  keypad(stdscr, TRUE);
- scrollok(stdscr, TRUE);
 
  y = 1;
 					 
- initscr();		
- work_on_win(stdscr,y,strlen(mesg),mesg,str);
- getyx(stdscr,y,x);
- edit_on_win(stdscr, y, x);
+ initscr();	
+
+ for (;;){
+	 switch(ch = wgetch(stdscr)){
+		case 'i':
+		 work_on_win(stdscr,y,strlen(mesg),mesg,str);
+		 getyx(stdscr,y,x);
+		 break;
+		case 'e':
+		 edit_on_win(stdscr, y, x);
+		 getyx(stdscr,y,x);
+		 break;
+	 }
+ }
 
  getch();
  endwin();

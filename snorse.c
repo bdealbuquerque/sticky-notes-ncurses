@@ -59,6 +59,6 @@ void edit_on_win(WINDOW *win, int y, int x){ /*Mode that edits lines*/
     }
 }
 
-char select_mode(WINDOW *win){ /*Selects between writing text or editing*/
+int select_mode(WINDOW *win){ /*Selects between writing text or editing*/
 	return wgetch(win); 
 }
